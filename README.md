@@ -23,17 +23,19 @@ You can also navigate through your list of appointments from the menu above.**
 ![image](https://github.com/user-attachments/assets/15abaee2-9527-4675-9d36-37f3727d3c09)
 
 
-![image](https://github.com/user-attachments/assets/cee8072c-3b3d-48e0-9973-96e869007af7)
 **The date you choose in the appointment section is automatically adjusted to:**
 - Make all past dates unavailable.
 - Verify if the selected date is already taken by another user.
 - Respect the barber shop's working hours:
     - Monday to Friday: 09:00 - 22:00
     - Sunday: 09:00 - 16:00
+![image](https://github.com/user-attachments/assets/cee8072c-3b3d-48e0-9973-96e869007af7)
 
-![image](https://github.com/user-attachments/assets/f8b1602d-b18e-45d7-8a04-0e03933eb144)
+
 **After you make an appointment, you will be redirected to the list of appointments where you can:**
 
 - View all your appointments
 - Edit them
 - Delete them
+![image](https://github.com/user-attachments/assets/f8b1602d-b18e-45d7-8a04-0e03933eb144)
+
