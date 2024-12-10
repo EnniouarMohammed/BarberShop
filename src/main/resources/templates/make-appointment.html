@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Make an Appointment</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+<header>
+    <div class="header-area bg-dark">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="logo-img">
+                            <a th:href="@{'/index'}">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9">
+                        <div class="menu_wrap d-none d-lg-block">
+                            <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
+                                <div class="main-menu">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" th:href="@{'/index'}">Home</a></li>
+                                            <li><a class="active" th:href="@{'/make-appointment'}">Appointment</a></li>
+                                            <li><a class="active" th:href="@{'/list-appointments'}">List of Appointments</a></li>
+                                            <li><a class="active" th:href="@{'/logout'}">Logout</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="make_apppointment_area" id="apppointment">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_title pl-68">
+                    <h3>Make an Appointment</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="appoint_ment_form pl-68">
+                    <form action="/make-appointment" method="post">
+                        <div class="single_field">
+                            <input name="fullName" type="text" placeholder="Full Name" required>
+                        </div>
+                        <div class="single_field">
+                            <input name="email" type="email" placeholder="Email" required>
+                        </div>
+                        <div class="single_field">
+                            <select name ="barber" class="form-select wide" >
+                                <option data-display="Choose Barbers" disabled selected>Choose a Barber</option>
+                                <option value="Jhon Smith" th:text="'Jhon Smith'"></option>
+                                <option value="Jems Smith" th:text="'Jems Smith'"></option>
+                                <option value="Thomas J Watson" th:text="'Thomas J Watson'"></option>
+                            </select>
+                        </div>
+                        <div class="single_field">
+                            <select name ="service" class="form-select wide" >
+                                <option data-display="Choose services" disabled selected>Choose a service</option>
+                                <option value="Service 1" th:text="'Service 1'"></option>
+                                <option value="Service 2" th:text="'Service 2'"></option>
+                                <option value="Service 3" th:text="'Service 3'"></option>
+                            </select>
+                        </div>
+                        <div class="single_field">
+                            <input name="date" type="datetime-local" id="datetimePicker" required>
+                        </div>
+
+                        <div class="single_field">
+                            <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                        </div>
+
+                        <div class="form_btn">
+                            <button class="boxed-btn3" type="submit">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1">
+                <div class="appointMent_info">
+                    <div class="single_appontment">
+                        <h4>Visit our studio at</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla interdum</p>
+                    </div>
+                    <div class="single_appontment">
+                        <h4>Message us</h4>
+                        <p>Support@br.net <br>
+                            (+212) 123456789</p>
+                    </div>
+                    <div class="single_appontment">
+                        <h4>Working Hours</h4>
+                        <p class="d-flex justify-content-between">
+                            <span>Monday - Friday</span>
+                            <span>: 09.00 - 22.00</span>
+                        </p>
+                        <p class="d-flex justify-content-between">
+                            <span>Sunday</span>
+                            <span>: 09.00 - 16.00</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <script>
+        const bookedDates = [[${bookedDates}]];
+    </script>
+    <script th:src="@{/js/script.js}"></script>
+</body>
+
+</html>

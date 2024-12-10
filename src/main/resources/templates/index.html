@@ -1,0 +1,437 @@
+<!doctype html>
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Barber Home</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<body>
+<header>
+    <div class="header-area ">
+        <div class="main-header-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="logo-img">
+                            <a href="index.html">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9">
+                        <div class="menu_wrap d-none d-lg-block">
+                            <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
+                                <div class="main-menu">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" th:href="@{'/index'}">home</a></li>
+                                            <li><a href="#AboutUs">About Us</a></li>
+                                            <li><a href="#Our_Services">Our Services</a></li>
+                                            <li><a class="active" th:href="@{'/make-appointment'}">Appointment</a></li>
+                                            <li th:if="${session.fullName == null}">
+                                                <a th:href="@{'/auth-sign-in'}" class="active">Sign-In/Join Us</a>
+                                            </li>
+                                            <li th:if="${session.fullName != null}">
+                                                <a class="active" th:href="@{'/list-appointments'}">List of Appointments</a>
+                                            </li>
+                                            <li th:if="${session.fullName != null}">
+                                                <a th:href="@{'/logout'}" class="active">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- header-end -->
+
+<!-- home_start -->
+<div class="slider_area">
+    <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1 overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-8">
+                    <div class="slider_text">
+                        <h3>Modern barber
+                            shop in center
+                            of the city</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                            incididunt ut labore et dolore magna aliqua.</p>
+                        <a th:href="@{'/make-appointment'}" class="boxed-btn3">Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- home_end -->
+
+<!-- about_area_start -->
+<div class="about_area " id="AboutUs">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="about_thumbs">
+                    <div class="large_img_1">
+                        <img src="img/about/about_lft.png" alt="">
+                    </div>
+                    <div class="small_img_1">
+                        <img src="img/about/about_right.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
+                <div class="about_info">
+                    <div class="section_title mb-20px">
+                        <h3>About Us</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing eliteiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Qpsum suspendisse ultrices gravida. Risus commodo viverra
+                            maecenas accumsan lacus vel facilisis. Quis ipsum suspendisse ultr.</p>
+                    </div>
+                    <p class="opening_hour">
+                        Opening Hour
+                        <span>10:00 am - 10:00 pm</span>
+                    </p>
+                    <a href="#AboutUs" class="boxed-btn3">About Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- about_area_end -->
+
+<div class="service_area" id="Our_Services">
+    <div class="container">
+        <div class="row justify-content-center ">
+            <div class="col-lg-6 col-md-10">
+                <div class="section_title text-center mb-55">
+                    <h3>Our Services</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="single_service">
+                    <div class="service_thumb">
+                        <img src="img/service/1.png" alt="">
+                    </div>
+                    <div class="service_content text-center">
+                        <div class="icon">
+                            <i class="flaticon-shave"></i>
+                        </div>
+                        <h3>Smooth Shave</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_service">
+                    <div class="service_thumb">
+                        <img src="img/service/2.png" alt="">
+                    </div>
+                    <div class="service_content text-center">
+                        <div class="icon">
+                            <i class="flaticon-barber"></i>
+                        </div>
+                        <h3>Beard Triming</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_service">
+                    <div class="service_thumb">
+                        <img src="img/service/3.png" alt="">
+                    </div>
+                    <div class="service_content text-center">
+                        <div class="icon">
+                            <i class="flaticon-null"></i>
+                        </div>
+                        <h3>Haircut Styles</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                            incididunt ut</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="prising_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-6 col-md-6">
+                <div class="section_title mb-55">
+                    <h3>Our Pricing</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="prising_active d-flex justify-content-between">
+                    <div class="single_prising">
+                        <div class="prise_title">
+                            <h4>Hair Styling</h4>
+                        </div>
+                        <div class="single_service">
+                            <div class="service_inner">
+                                <div class="thumb">
+                                    <img src="img/prising/1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="hair_style_info">
+                                <div class="prise d-flex justify-content-between">
+                                    <span>Hair Cut</span>
+                                    <span>$8</span>
+                                </div>
+                                <p>Lorem ipsum dolor sitamet, consectetur </p>
+                            </div>
+                        </div>
+                        <div class="single_service">
+                            <div class="service_inner">
+                                <div class="thumb">
+                                    <img src="img/prising/1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="hair_style_info">
+                                <div class="prise d-flex justify-content-between">
+                                    <span>Hair Style</span>
+                                    <span>$8</span>
+                                </div>
+                                <p>Lorem ipsum dolor sitamet, consectetur </p>
+                            </div>
+                        </div>
+                        <div class="single_service">
+                            <div class="service_inner">
+                                <div class="thumb">
+                                    <img src="img/prising/1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="hair_style_info">
+                                <div class="prise d-flex justify-content-between">
+                                    <span>Shaving</span>
+                                    <span>$8</span>
+                                </div>
+                                <p>Lorem ipsum dolor sitamet, consectetur </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single_prising">
+                        <div class="prise_title">
+                            <h4>Hair Styling</h4>
+                        </div>
+                        <div class="single_service">
+                            <div class="service_inner">
+                                <div class="thumb">
+                                    <img src="img/prising/1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="hair_style_info">
+                                <div class="prise d-flex justify-content-between">
+                                    <span>Hair Cut</span>
+                                    <span>$8</span>
+                                </div>
+                                <p>Lorem ipsum dolor sitamet, consectetur </p>
+                            </div>
+                        </div>
+                        <div class="single_service">
+                            <div class="service_inner">
+                                <div class="thumb">
+                                    <img src="img/prising/1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="hair_style_info">
+                                <div class="prise d-flex justify-content-between">
+                                    <span>Hair Style</span>
+                                    <span>$8</span>
+                                </div>
+                                <p>Lorem ipsum dolor sitamet, consectetur </p>
+                            </div>
+                        </div>
+                        <div class="single_service">
+                            <div class="service_inner">
+                                <div class="thumb">
+                                    <img src="img/prising/1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="hair_style_info">
+                                <div class="prise d-flex justify-content-between">
+                                    <span>Shaving</span>
+                                    <span>$8</span>
+                                </div>
+                                <p>Lorem ipsum dolor sitamet, consectetur </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- team_area_start  -->
+<div class="team_area">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10">
+                <div class="section_title text-center mb-55">
+                    <h3>Barber</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="single_team_member">
+                    <div class="team_thumb">
+                        <img src="img/team/1.png" alt="">
+                    </div>
+                    <div class="member_info text-center">
+                        <h3>Jhon Smith</h3>
+                        <p>Junior Barber</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_team_member">
+                    <div class="team_thumb">
+                        <img src="img/team/2.png" alt="">
+                    </div>
+                    <div class="member_info text-center">
+                        <h3>Jems Smith</h3>
+                        <p>Junior Barber</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="single_team_member">
+                    <div class="team_thumb">
+                        <img src="img/team/3.png" alt="">
+                    </div>
+                    <div class="member_info text-center">
+                        <h3>Thomas J Watson</h3>
+                        <p>Junior Barber</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- team_area_end  -->
+
+
+<!-- footer_start  -->
+<footer class="footer">
+    <div class="footer_top">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-5 col-md-6 col-lg-5 ">
+                    <div class="footer_widget">
+                        <div class="footer_logo">
+                            <a href="#">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                        <p class="address_text">Lorem ipsum dolor sit amet, consectetur <br> adipiscing elit, sed do
+                            eiusmod tempor <br> incididunt ut labore et dolore magna aliqua. <br> Quis ipsum
+                            suspendisse.
+                        </p>
+                        <div class="socail_links">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-dribbble"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-xl-3 col-md-6 col-lg-3">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Information
+                        </h3>
+                        <ul class="links">
+                            <li><a href="#AboutUs">About</a></li>
+                            <li><a href="#Our_Services">Services</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2  col-md-6 col-lg-2">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Services
+                        </h3>
+                        <ul class="links">
+                            <li><a href="#">Smooth Shave </a></li>
+                            <li><a href="#">Beard Triming</a></li>
+                            <li><a href="#"> Haircut Styles</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-2  col-md-6 col-lg-2">
+                    <div class="footer_widget">
+                        <h3 class="footer_title">
+                            Follow Us
+                        </h3>
+                        <ul class="links">
+                            <li><a href="#">FaceBook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#"> Twitter</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

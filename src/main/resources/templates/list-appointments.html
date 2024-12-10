@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>List of Appointments</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/css/flaticon.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+<header>
+    <div class="header-area bg-dark">
+        <div class="main-header-area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-3">
+                        <div class="logo-img">
+                            <a th:href="@{'/index'}">
+                                <img src="img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9">
+                        <div class="menu_wrap d-none d-lg-block">
+                            <div class="menu_wrap_inner d-flex align-items-center justify-content-end">
+                                <div class="main-menu">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a class="active" th:href="@{'/index'}">Home</a></li>
+                                            <li><a class="active" th:href="@{'/make-appointment'}">Appointment</a></li>
+                                            <li><a class="active" th:href="@{'/list-appointments'}">List of Appointments</a></li>
+                                            <li><a class="active" th:href="@{'/logout'}">Logout</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="make_apppointment_area" id="apppointment">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section_title pl-68">
+                    <h3>List of Appointments</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-7">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Reference</th>
+                        <th scope="col">Full Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Barber</th>
+                        <th scope="col">Service</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="appointment : ${listAppointments}">
+                        <td th:text="${appointment.getReference()}"></td>
+                        <td th:text="${appointment.getFullName()}"></td>
+                        <td th:text="${appointment.getEmail()}"></td>
+                        <td th:text="${appointment.getBarber()}"></td>
+                        <td th:text="${appointment.getService()}"></td>
+                        <td th:text="${#temporals.format(appointment.getDate(), 'MMMM d, yyyy h:mm a')}"></td>
+                        <td th:text="${appointment.getMessage()}"></td>
+                        <td><a class="genric-btn info circle" th:href="@{'/edit-appointment/' + ${appointment.getId()}}">Edit</a></td>
+                        <td><a class="genric-btn danger circle" data-toggle="tooltip" data-placement="top" onclick="return confirmDelete()"
+                               data-original-title="Delete" th:href="@{deleteAppointment(id=${appointment.getId()})}">Delete</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script th:src="@{/js/script.js}"></script>
+</body>
+
+</html>
