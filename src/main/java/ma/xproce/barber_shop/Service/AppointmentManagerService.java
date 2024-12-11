@@ -5,6 +5,7 @@ import ma.xproce.barber_shop.DAO.entities.UserBr;
 import ma.xproce.barber_shop.DAO.repositories.AppointmentRepository;
 import ma.xproce.barber_shop.DAO.repositories.UserBrRepository;
 import ma.xproce.barber_shop.config.SecurityUtil;
+import org.springframework.aop.scope.ScopedProxyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

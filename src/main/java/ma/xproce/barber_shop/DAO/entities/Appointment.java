@@ -38,7 +38,7 @@ public class Appointment {
     @NotEmpty()
     private String message;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "created_by", nullable = false)
     private UserBr createdBy;
 

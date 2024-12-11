@@ -64,32 +64,34 @@
             <div class="col-lg-7">
                 <div class="appoint_ment_form pl-68">
                     <form th:action="@{/edit-appointment/{id}(id=${appointment.id})}" th:object="${appointment}" method="post">
+                        <input type="hidden" name="createdBy" th:value="*{createdBy.id}"></input>
+                        <input type="hidden" name="reference" th:value="*{reference}"></input>
                         <div class="single_field">
-                            <input th:value="*{fullName}" type="text" placeholder="Full Name" required>
+                            <input name="fullName" th:value="*{fullName}" type="text" placeholder="Full Name" required>
                         </div>
                         <div class="single_field">
-                            <input th:value="*{email}" type="email" placeholder="Email" required>
+                            <input name="email" th:value="*{email}" type="email" placeholder="Email" required>
                         </div>
                         <div class="single_field">
-                            <select th:field="*{barber}" class="form-select wide" id="barber-select">
+                            <select name ="barber" th:field="*{barber}" class="form-select wide" id="barber-select">
                                 <option value="Jhon Smith" th:selected="${appointment.barber == 'Jhon Smith'}">Jhon Smith</option>
                                 <option value="Jems Smith" th:selected="${appointment.barber == 'Jems Smith'}">Jems Smith</option>
                                 <option value="Thomas J Watson" th:selected="${appointment.barber == 'Thomas J Watson'}">Thomas J Watson</option>
                             </select>
                         </div>
                         <div class="single_field">
-                            <select th:field="*{service}" class="form-select wide" id="service-select">
+                            <select name ="service" th:field="*{service}" class="form-select wide" id="service-select">
                                 <option value="Service 1" th:selected="${appointment.service == 'Service 1'}">Service 1</option>
                                 <option value="Service 2" th:selected="${appointment.service == 'Service 2'}">Service 2</option>
                                 <option value="Service 3" th:selected="${appointment.service == 'Service 3'}">Service 3</option>
                             </select>
                         </div>
                         <div class="single_field">
-                            <input th:value="*{date}" type="datetime-local" id="datetimePicker" required>
+                            <input name="date" th:value="*{date}" type="datetime-local" id="datetimePicker" required>
                         </div>
 
                         <div class="single_field">
-                            <textarea th:text="*{message}" id="" cols="30" rows="10" placeholder="Message"></textarea>
+                            <textarea name="message" th:text="*{message}" id="" cols="30" rows="10" placeholder="Message"></textarea>
                         </div>
 
                         <div class="form_btn">

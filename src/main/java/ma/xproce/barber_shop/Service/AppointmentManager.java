@@ -3,9 +3,11 @@ package ma.xproce.barber_shop.Service;
 import ma.xproce.barber_shop.DAO.entities.Appointment;
 import ma.xproce.barber_shop.DAO.entities.UserBr;
 import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public interface AppointmentManager {
     Appointment addAppointment(Appointment appointment);
 
@@ -18,6 +20,6 @@ public interface AppointmentManager {
     List<Appointment> getAllAppointments();
     List<String> getBookedDates();
 
-    public Page<Appointment> searchAppointments(String keyword, UserBr user, int page, int taille);
+    Page<Appointment> searchAppointments(String keyword, UserBr user, int page, int taille);
 
 }

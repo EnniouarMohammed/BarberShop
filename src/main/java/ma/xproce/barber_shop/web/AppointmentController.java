@@ -70,17 +70,18 @@ public class AppointmentController {
     }
 
     @GetMapping("/edit-appointment/{id}")
-    public String editSale(@PathVariable("id") int id, Model model) {
+    public String editAppointment(@PathVariable("id") int id, Model model) {
         Appointment appointment = appointmentManager.findAppointmentById(id);
         model.addAttribute("appointment", appointment);
 
-        return "edit-appointment";
+        return "/edit-appointment";
     }
 
     @PostMapping("/edit-appointment/{id}")
-    public String updateSale(@PathVariable("id") int id, @ModelAttribute("appointment") Appointment appointment) {
+    public String updateAppointment(@PathVariable("id") int id, Appointment appointment) {
+        System.out.println(appointment);
         appointmentManager.updateAppointment(appointment);
-        return "redirect:list-appointments";
+        return "redirect:/list-appointments";
     }
 
     @GetMapping("/deleteAppointment")
