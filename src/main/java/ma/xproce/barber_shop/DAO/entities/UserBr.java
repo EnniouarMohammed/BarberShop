@@ -5,8 +5,6 @@ import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Pattern;
 import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Data
@@ -30,8 +28,5 @@ public class UserBr {
 
     @NotEmpty()
     private String password;
-
-    @OneToMany
-    List<Appointment> appointments = new ArrayList<>();
 
 }
